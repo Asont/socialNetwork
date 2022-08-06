@@ -1,0 +1,30 @@
+@use 'src/style';
+
+.item {
+  background: style.$main_color;
+  color: style.$text_color;
+  padding: 8px 25px 6px 25px;
+  border: none;
+  text-align: center;
+  font-size: 13px;
+  font-weight: 300;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  line-height: 1.5;
+  transition: all linear 0.3s;
+  position: relative;
+
+  &:disabled {
+    background-color: gray;
+
+    &:hover {
+      color: style.$text_color;
+    }
+  }
+
+  &:hover {
+    color: style.$primary_color;
+    cursor: pointer;
+  }
+}
+

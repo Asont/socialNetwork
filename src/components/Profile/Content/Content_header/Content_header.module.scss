@@ -1,0 +1,29 @@
+@use "src/style";
+
+.content {
+  @include style.DisplayFlexCenter();
+  flex-direction: row;
+  align-items: flex-start;
+  background-color: style.$primary_color;
+  padding: style.$gap;
+
+  img {
+    width: 200px;
+  }
+
+  .avatar {
+    @include style.DisplayFlexCenter();
+    align-items: flex-start;
+    gap: 30px;
+    width: 40%;
+  }
+
+  .contacts {
+    width: 60%;
+  }
+}
+
+
+.contacts {
+  padding-left: 20px;
+}

@@ -1,0 +1,15 @@
+.main {
+
+}
+
+
+.item {
+    display: flex;
+    flex-direction: row;
+    width: auto;
+    justify-content: space-between;
+}
+
+.error {
+    color: maroon;
+}
