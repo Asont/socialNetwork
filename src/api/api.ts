@@ -5,9 +5,9 @@ import { UsersStatePT } from 'components/Users/UsersContainer';
 import { ProfileDataType, ProfileType } from 'redux/profile_reducer';
 
 const instance = axios.create({
-  baseURL: 'https://social-network.samuraijs.com/api/1.0',
+  baseURL: process.env.REACT_APP_BASE_URL,
   withCredentials: true,
-  headers: { 'API-KEY': '123d5b87-891c-47a5-804d-6478e65a9a54' },
+  headers: { 'API-KEY': process.env.REACT_APP_API_KEY as string },
 });
 
 export type loginAPIRequestType = {
