@@ -48,17 +48,16 @@ class App extends Component<MapDispatchPT & UserDataInitialStateType> {
         <div className={style.main}>
           <Suspense fallback={<Preloader />}>
             <Routes>
-              <Route path="/" element={<Navigate to="/profile" />} />
-              <Route path="/samurai_way_my/" element={<Navigate to="/profile" />} />
-              <Route path="/profile" element={<ProfileContainer />}>
+              <Route path="/" element={<Navigate to="socialnetwork/profile" />} />
+              <Route path="socialnetwork/profile" element={<ProfileContainer />}>
                 <Route path=":userId" element={<ProfileContainer />} />
               </Route>
-              <Route path={'/messages/*'} element={<MessagesContainer />} />
-              <Route path="/users/" element={<UsersContainer />} />
-              <Route path="/news" element={<News />} />
-              <Route path="/music" element={<Music />} />
-              <Route path="/settings" element={<Settings />} />
-              <Route path="/login" element={<Login />} />
+              <Route path={'socialnetwork/messages/*'} element={<MessagesContainer />} />
+              <Route path="socialnetwork/users/" element={<UsersContainer />} />
+              <Route path="socialnetwork/news" element={<News />} />
+              <Route path="socialnetwork/music" element={<Music />} />
+              <Route path="socialnetwork/settings" element={<Settings />} />
+              <Route path="socialnetwork/login" element={<Login />} />
               <Route path={'/*'} element={<Page404 />} />
             </Routes>
           </Suspense>

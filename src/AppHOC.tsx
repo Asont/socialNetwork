@@ -18,7 +18,7 @@ const mapStateToProps = (state: AppStatePT): UserDataInitialStateType => ({
 const AppContainer = connect(mapStateToProps, mapDispatchToProps)(App);
 
 export const AppHoc = (): ReactElement => (
-  <BrowserRouter basename={process.env.PUBLIC_URL}>
+  <BrowserRouter>
     <Provider store={store}>
       {' '}
       <AppContainer />
