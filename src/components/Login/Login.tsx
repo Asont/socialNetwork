@@ -25,7 +25,6 @@ const LoginContainer: FC<mapDispatchToPropsType & mapStateToPropsType> = ({
     </div>
   );
 };
-// <LoginForm onSubmit={onSubmit}/> так это контейнерная компонента, то в onSubmit автоматом попадают пропсы
 
 type mapStateToPropsType = { isAuth: boolean; captchaURL: string };
 

@@ -48,8 +48,7 @@ class App extends Component<MapDispatchPT & UserDataInitialStateType> {
         <div className={style.main}>
           <Suspense fallback={<Preloader />}>
             <Routes>
-              <Route path="/" element={<Navigate to="/profile" />} />
-              <Route path="/social/" element={<Navigate to="/profile" />} />
+              <Route path="/" element={<Navigate to="socialnetwork/profile" />} />
               <Route path="/profile" element={<ProfileContainer />}>
                 <Route path=":userId" element={<ProfileContainer />} />
               </Route>
