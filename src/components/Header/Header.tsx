@@ -1,4 +1,5 @@
 import { memo } from 'react';
+import logo from '../common/assets/images/logo.jpeg';
 
 import { NavLink } from 'react-router-dom';
 
