@@ -1,7 +1,8 @@
 import { memo } from 'react';
-import logo from '../common/assets/images/logo.jpeg';
 
 import { NavLink } from 'react-router-dom';
+
+import image from '../../common/assets/images/logo.png';
 
 import style from './Header.module.scss';
 
@@ -30,10 +31,7 @@ export const Header = memo(
   ({ data, setLogoutHandle }: DataHeaderType & mapDispatchToPropsPT) => (
     <div className={style.header}>
       <div>
-        <img
-          alt="logo"
-          src="https://64.media.tumblr.com/dcf321432c1bcf3f4479d08c03660c00/cd7d9d5495f29449-d5/s540x810/2a272be1ceefb67c220bcbc378a6afe9d2507732.pnj"
-        />
+        <img alt="logo" src={image} />
       </div>
       <div className={style.loginBlock}>
         {data.resultCode === CommonConstants.zero ? (

@@ -1,4 +1,6 @@
 
+
+
 .dialog {
     display: flex;
     flex-direction: row;
@@ -8,15 +10,15 @@
 
 .dialog img {
     margin-right: 0.5em;
-    width: 50px;
-    height: 65px;
+    width: 64px;
+    height: 64px;
     border-radius: 20px;
 }
 
 .navLink {
     text-decoration: none;
     align-content: end;
-    color: beige;
+    color: #80807a;
 }
 
 

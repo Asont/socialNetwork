@@ -18,12 +18,12 @@
     background-color: gray;
 
     &:hover {
-      color: style.$text_color;
+      color: #c5c8ce;
     }
   }
 
   &:hover {
-    color: style.$primary_color;
+    color: #b6b8c5;
     cursor: pointer;
   }
 }
