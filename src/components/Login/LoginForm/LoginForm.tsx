@@ -1,6 +1,11 @@
 import { FC, ReactElement } from 'react';
 
+import { Checkbox, TextField } from '@mui/material';
 import { useFormik } from 'formik';
+
+import styleButton from '../../comonComponents/Button/Button.module.scss';
+
+import style from './LoginForm.module.scss';
 
 import { loginAPIRequestType } from 'api/api';
 
@@ -36,34 +41,36 @@ export const LoginForm: FC<LoginFormPropsType> = ({
   });
 
   return (
-    <div>
+    <div className={style.form}>
       <form onSubmit={formik.handleSubmit}>
         <div>
-          <input
+          <TextField
             id="email"
             name="email"
+            label="Email"
             type="email"
-            // autoComplete={formik.values.email}
+            variant="standard"
             onChange={formik.handleChange}
             value={formik.values.email}
           />
         </div>
-        <input
+        <TextField
           id="password"
           name="password"
           type="password"
-          // autoComplete={formik.values.password}
+          label="Password"
+          variant="standard"
           onChange={formik.handleChange}
           value={formik.values.password}
         />
         <div>
-          <input
+          <Checkbox
             id="checkbox"
             name="checkbox"
-            type="checkbox"
             onChange={formik.handleChange}
             defaultChecked={formik.values.rememberMe}
-          />
+          />{' '}
+          Remember Me
         </div>
 
         {captchaURL && (
@@ -80,7 +87,9 @@ export const LoginForm: FC<LoginFormPropsType> = ({
             </div>
           </div>
         )}
-        <button type="submit">Login</button>
+        <button className={styleButton.item} type="submit">
+          Login
+        </button>
       </form>
     </div>
   );

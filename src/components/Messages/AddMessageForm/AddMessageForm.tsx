@@ -1,5 +1,6 @@
 import { FC, ReactElement } from 'react';
 
+import { TextField } from '@mui/material';
 import { useFormik } from 'formik';
 
 import { Button } from 'components/comonComponents/Button/Button';
@@ -27,11 +28,12 @@ export const AddMessageForm: FC<AddMessageFormPropsType> = ({
 
   return (
     <form onSubmit={formik.handleSubmit}>
-      <input
+      <TextField
         id="message"
         name="message"
-        type="message"
-        placeholder="some text"
+        label="Enter text"
+        type="text"
+        variant="standard"
         onChange={formik.handleChange}
         value={formik.values.message}
       />

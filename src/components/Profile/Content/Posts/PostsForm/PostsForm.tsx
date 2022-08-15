@@ -1,5 +1,6 @@
 import { ReactElement } from 'react';
 
+import { TextField } from '@mui/material';
 import { useFormik } from 'formik';
 
 import { Button } from 'components/comonComponents/Button/Button';
@@ -26,11 +27,11 @@ export const PostForm = ({ addNewPostHandle }: addNewPostHandleType): ReactEleme
   return (
     <form onSubmit={formik.handleSubmit}>
       <div>
-        <input
+        <TextField
           id="textPost"
-          name="textPost"
-          type="textPost"
-          placeholder="your thoughts"
+          label="Posts"
+          type="text"
+          variant="standard"
           onChange={formik.handleChange}
           value={formik.values.textPost}
         />

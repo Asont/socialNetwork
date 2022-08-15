@@ -1,6 +1,6 @@
 import { ReactElement } from 'react';
 
-import loader from '../Users/imgAva/blak_water.gif';
+import loader from '../Users/imgAva/loading.gif';
 
 import style from 'components/Users/Users.module.scss';
 

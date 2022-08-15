@@ -1,6 +1,7 @@
 @use 'src/style';
 
 .item {
+  box-shadow: 2px 1px 5px grey;
   background: style.$main_color;
   color: style.$text_color;
   padding: 8px 25px 6px 25px;
