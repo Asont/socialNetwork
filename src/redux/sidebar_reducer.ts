@@ -9,9 +9,6 @@ const initialState: Array<ItemPT> = [
   { path: '/messages', title: 'Messages' },
   { path: '/users', title: 'Users' },
   { path: '/news', title: 'News' },
-  { path: '/music', title: 'Music' },
-  { path: '/settings', title: 'Settings' },
-  { path: '/login', title: 'Login' },
 ];
 
 const SIDE_BAR_TEST = 'SIDE_BAR_TEST';

@@ -11,8 +11,6 @@ import { UserDataInitialStateType } from 'redux/app_reducer';
 
 const News = lazy(() => import('components/News/News'));
 const Login = lazy(() => import('components/Login/Login'));
-const Music = lazy(() => import('components/Music/Music'));
-const Settings = lazy(() => import('components/Settings/Settings'));
 const UsersContainer = lazy(() => import('./components/Users/UsersContainer'));
 const ProfileContainer = lazy(() => import('./components/Profile/ProfileContainer'));
 const MessagesContainer = lazy(() => import('./components/Messages/MessagesContainer'));
@@ -54,8 +52,6 @@ class App extends Component<MapDispatchPT & UserDataInitialStateType> {
               <Route path={'/messages/*'} element={<MessagesContainer />} />
               <Route path="/users/" element={<UsersContainer />} />
               <Route path="/news" element={<News />} />
-              <Route path="/music" element={<Music />} />
-              <Route path="/settings" element={<Settings />} />
               <Route path="/login" element={<Login />} />
               <Route path={'/*'} element={<Navigate to="/profile" />} />
             </Routes>

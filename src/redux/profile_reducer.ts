@@ -92,57 +92,6 @@ export const {
   addLikeAC,
 } = slice.actions;
 
-// export const profileReducer = (
-//   state = initialState,
-//   action: ActionPT,
-// ): initialStateProfileType => {
-//   const newPost = {
-//     id: '',
-//     message: '', // action.newText from redux form
-//     like: 0,
-//     comment: 0,
-//   };
-//   switch (action.type) {
-//     case ADD_POST:
-//       newPost.id = action.id;
-//       newPost.message = action.value;
-//       return { ...state, postData: [newPost, ...state.postData], newPostText: '' };
-//     // case CHANGE_POST:
-//     //     return {...state, newPostText: action.newText}
-//     case ADD_LIKE:
-//       return {
-//         ...state,
-//         postData: state.postData.map(post =>
-//           post.id === action.postID
-//             ? {
-//                 ...post,
-//                 like: post.like + CommonConstants.one,
-//               }
-//             : post,
-//         ),
-//       };
-//     case SET_USER_PROFILE:
-//       return { ...state, profile: action.profile };
-//     case SET_USER_STATUS:
-//       return { ...state, status: action.status };
-//     case SET_PHOTO:
-//       return {
-//         ...state,
-//         profile: { ...state.profile, photos: action.file.photos },
-//       };
-//     case SET_USER_PROFILE_DATA:
-//       return {
-//         ...state,
-//         profile: {
-//           ...state.profile,
-//           ...action.data,
-//         },
-//       };
-//     default:
-//       return state;
-//   }
-// };
-
 export const setUserTC = (userId: string) => async (dispatch: Dispatch) => {
   const response = await profileAPI.getUserData(userId);
   dispatch(setUserProfileAC({ profile: response }));
@@ -165,7 +114,6 @@ export const updateUserStatusTC = (status: string) => async (dispatch: Dispatch)
   if (response.resultCode === ResultCode.success) {
     dispatch(setUserStatusAC({ status })); // если запрос успешный, то обнови статус на тот, который отправил
   } else {
-    // eslint-disable-next-line no-console
     console.warn(response.messages[CommonConstants.zero]);
   }
 };
@@ -186,17 +134,8 @@ export const setProfileDataTC =
   async dispatch => {
     const response = await profileAPI.updateUserData(data);
     if (response.resultCode === ResultCode.success) {
-      // const nextResponse = await profileAPI.getUserData(userId); // дублирование .. как запустить вторую санку ?
-      // dispatch(setUserProfileAC(nextResponse));
       await dispatch(setUserTC(userId));
       setEditMod(false);
-    } else {
-      // const action = stopSubmit('PROFILE', {
-      //   _error: response.messages[CommonConstants.zero]
-      //     ? response.messages[CommonConstants.zero]
-      //     : 'something is wrong',
-      // });
-      // dispatch(action);
     }
   };
 
@@ -211,7 +150,7 @@ export type initialStateProfileType = {
   postData: Array<PostDataType>;
   newPostText: string;
   profile: ProfileType;
-  status: string; // another request
+  status: string;
 };
 
 export type PostDataType = {

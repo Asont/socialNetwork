@@ -14,16 +14,16 @@ export const ProfileDataInfo = ({ profile }: ProfileDataInfoType): ReactElement 
     <div>
       <div>
         <div>
-          <b>lookingForAJob:</b> {`${profile.lookingForAJob}`}
-        </div>
-        <div>
-          <b>lookingForAJobDescription:</b> {`${profile.lookingForAJobDescription}`}
-        </div>
-        <div>
           <b>fullName:</b> {profile.fullName}
         </div>
         <div>
           <b>about me:</b> {profile.aboutMe}
+        </div>
+        <div>
+          <b>lookingForAJob:</b> {`${profile.lookingForAJob}`}
+        </div>
+        <div>
+          <b>lookingForAJobDescription:</b> {`${profile.lookingForAJobDescription}`}
         </div>
         <b>Contacts:</b>
       </div>
